@@ -1,47 +1,28 @@
 <script>
-  import Navbar from "./Navbar.svelte";
-  import Player from "./Player.svelte";
-  import AddPlayer from "./AddPlayer.svelte";
+  import { fade, fly } from "svelte/transition";
+  import Navbar from "./components/navbar/Navbar.svelte";
+  import MainText from "./components/maintext/MainText.svelte";
+  import Experience from "./components/experience/Experience.svelte";
+  let selectedPage = 0;
 
-  let players = [
-    {
-      name: "Camilo Cuevas",
-      points: 54,
-    },
-    {
-      name: "Matias Molina",
-      points: 45,
-    },
-    {
-      name: "Piter Piter",
-      points: 35,
-    },
-  ];
-
-  const addPlayer = (e) => {
-    const newPlayer = e.detail;
-    players = [...players, newPlayer];
-  };
-
-  const removePlayer = (e) => {
-    const index = e.detail;
-    players = [...players.slice(0, index), ...players.slice(index + 1)];
+  const switchContent = (event) => {
+    selectedPage = event.detail;
   };
 </script>
 
-<Navbar />
 <div class="container">
-  <AddPlayer on:addplayer={addPlayer} />
-  {#if players.length === 0}
-    <p>No Players</p>
-  {:else}
-    {#each players as player, i}
-      <Player
-        name={player.name}
-        points={player.points}
-        index={i}
-        on:removeplayer={removePlayer}
-      />
-    {/each}
+  <Navbar on:switchcontent={switchContent} />
+  {#if selectedPage === 0}
+    <div in:fly={{ x: 200, duration: 500 }}>
+      <MainText />
+    </div>
+  {:else if selectedPage === 1}
+    <div in:fly={{ x: 200, duration: 500 }}>
+      <Experience />
+    </div>
+  {:else if selectedPage === 2}
+    <div in:fly={{ x: 200, duration: 500 }}>
+      <MainText />
+    </div>
   {/if}
 </div>
