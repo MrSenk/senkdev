@@ -44,7 +44,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
-  margin: 13% 0;
+  margin: 40% 0;
   z-index: 400;
 
   .wrapper-name {
@@ -73,6 +73,8 @@ export default {
 
 @media (min-width: #{map-get($breakpoints, small)}) {
   .name {
+    margin: 20% 0;
+
     .wrapper-name {
       width: 55%;
     }
@@ -87,6 +89,8 @@ export default {
 }
 @media (min-width: #{map-get($breakpoints, medium)}) {
   .name {
+    margin: 15% 0;
+
     .wrapper-name {
       width: 450px;
     }
@@ -97,6 +101,11 @@ export default {
     p {
       font-size: 2.5rem;
     }
+  }
+}
+@media (min-width: #{map-get($breakpoints, extralarge)}) {
+  .name {
+    margin: 10% 0;
   }
 }
 @media only screen and (max-device-width: 1024px) {
