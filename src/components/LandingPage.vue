@@ -44,7 +44,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
-  margin: 8% 0;
+  margin: 13% 0;
   z-index: 400;
 
   .wrapper-name {
