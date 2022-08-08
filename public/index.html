@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <title>Scoreboard</title>
-
-    <link rel="icon" type="image/png" href="./favicon.png" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./build/bundle.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to my personnal portfolio built with VueJS!"
+    />
+    <meta property="og:title" content="Camilo Cuevas Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://senk.dev/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="<%= BASE_URL %>og.png" />
+    <meta
+      property="og:description"
+      content="Welcome to my personnal portfolio buildt with VueJS !"
+    />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>Camilo Cuevas Portfolio</title>
   </head>
-
-  <body>
-    <script src="./build/bundle.js"></script>
+  <body style="height: 100%;">
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
   </body>
 </html>
